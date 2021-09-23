@@ -21,7 +21,6 @@ namespace TodoApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
             services.AddDbContext<TodoContext>(opt =>
                                                opt.UseInMemoryDatabase("TodoList"));
             //services.AddSwaggerGen(c =>
@@ -41,9 +40,7 @@ namespace TodoApi
 
             app.UseHttpsRedirection();
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
